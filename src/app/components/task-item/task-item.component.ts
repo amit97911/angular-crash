@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Task } from 'src/app/Task';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
+import { Task } from 'src/app/Task';
 @Component({
   selector: 'app-task-item',
   templateUrl: './task-item.component.html',
@@ -8,6 +9,7 @@ import { Task } from 'src/app/Task';
 })
 export class TaskItemComponent implements OnInit {
   @Input() task!: Task;
+  faXmark = faXmark;
 // ! indicates that you’re certain that value is not null or undefined.
   constructor() { }
 
