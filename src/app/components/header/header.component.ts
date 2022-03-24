@@ -14,4 +14,7 @@ export class HeaderComponent implements OnInit {
 
   title = 'angular-crash';
 
+  toggleAddTask(){
+    console.log("Toggle");
+  }
 }
