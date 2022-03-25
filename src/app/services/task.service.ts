@@ -16,4 +16,9 @@ export class TaskService {
   getTasks(): Observable<Task[]> {
     return this.HttpClient.get<Task []>(this.apiUrl);
   }
+
+  deleteTask(task: Task) :Observable<Task> {
+    const url = `${this.apiUrl}/${task.id}`;
+    return this.HttpClient.delete<Task>(url);
+  }
 }

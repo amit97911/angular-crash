@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import { Task } from 'src/app/Task';
@@ -9,11 +9,17 @@ import { Task } from 'src/app/Task';
 })
 export class TaskItemComponent implements OnInit {
   @Input() task!: Task;
+  @Output() onDeleteTask = new EventEmitter<Task>();
+
   faXmark = faXmark;
-// ! indicates that you’re certain that value is not null or undefined.
+  // ! indicates that you’re certain that value is not null or undefined.
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onDelete(task: Task) :void{
+    this.onDeleteTask.emit(task);
   }
 
 }
