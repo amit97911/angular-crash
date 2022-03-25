@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  title = 'angular-crash';
+  title = 'Task Tracker';
 
   toggleAddTask(){
     console.log("Toggle");
